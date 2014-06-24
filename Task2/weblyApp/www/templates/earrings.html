@@ -1,0 +1,105 @@
+<ion-view title="Kama">
+    <ion-content class="has-header" scroll ="true">
+        <ion-refresher
+                       pulling-text="Pull to refresh..."
+                       on-refresh="doRefresh()">
+        </ion-refresher>
+        <div class="list" style="display : {{cartHasItem}}">
+            <a class="item item-icon-left" ng-click="openCart()">
+                <i class="icon ion-bag"></i>
+                Checkout
+                <span class="badge badge-assertive">{{cartItems}}</span>
+            </a>
+        </div>
+        <div class="list card" style="margin-top: 10px;">
+
+            <div class="item item-avatar">
+                <img src={{products.thumbnail.url}}>
+                <h2>{{products.name}}</h2>
+				<div ng-if="products.stock.inStock">
+					<p class="button button-balanced">In Stock</p>
+				</div>
+				<div ng-if="!products.stock.inStock">
+					<p class="button button-assertive">No Stock</p>
+				</div>
+            </div>
+
+            <div class="item item-body">
+                <div class = "row">
+                    <div class = "col"><img class="full-image" src={{products.images[0].url}}></div>
+                    <div class = "col"><img class="full-image" src={{products.images[1].url}}></div>
+                </div>
+                <p>
+                    {{products.description}}
+                </p>
+                <p>
+                    <div class = "row">
+                        <button class="button button-clear button-dark">
+                            <b>{{products.price | currency:"₹":2:",":"." }}</b>
+                        </button>
+                    </div>
+                    <div class = "row">
+						<button ng-class="products.stock.quantity > 0 ? ' button button-full icon-left ion-ios7-cart  button-royal'
+                                     : 'button button-full icon-left ion-ios7-cart  button-light'"
+                           ng-click="addToCart(products)" >
+                            Add to Cart
+                        </button>
+                   </div>
+                </p>
+            </div>
+
+            <div class="item tabs tabs-secondary tabs-icon-left">
+                <a class="tab-item" href="#">
+                    <i class="icon ion-share"></i>
+                    Share
+                </a>
+            </div>
+        </div>
+</ion-content>
+<script id="checkoutCart.html" type="text/ng-template">
+
+  <div class="modal">
+
+    <!-- Modal header bar -->
+    <ion-header-bar class="bar-secondary bar-royal">
+      <button class="button button-clear ion-ios7-trash" ng-click="clearCart()"></button>
+      <h1 class="title">Cart</h1>
+      <button class="button button-clear ion-ios7-close-outline" ng-click="closeCart()"></button>
+    </ion-header-bar>
+
+    <!-- Modal content area -->
+    <ion-content>
+
+      <form ng-submit="">
+        <div class="list">
+
+            <div class="item item-avatar" ng-repeat="item in cart">
+                <img src={{item.thumbnail}}>
+                <h2>{{item.itemName}}</h2>
+                <p>{{item.price  | currency:"₹":2:",":"." }}</p>
+                <p>Subtotal: {{item.price * item.quantity  | currency:"₹":2:",":"." }}</p>
+                <span class="badge badge-assertive">{{item.quantity}}</span>
+            </div>
+            <label class="item">
+                <div class = "row">
+                    <div class = "col">
+                        <h2>Total Quantity: </h2><p>{{cartItems}}</p>
+                    </div>
+                    <div class = "col">
+                        <h2>Grand Total: </h2><p>{{grandTotal | currency:"₹":2:",":"." }}</p>
+                    </div>
+                </div>
+            </label>
+        </div>
+
+        <div class="padding">
+          <button type="submit" class="button button-block button-royal icon-left ion-card">Checkout</button>
+        </div>
+      </form>
+
+    </ion-content>
+
+  </div>
+
+</script>
+</ion-view>
