@@ -13,8 +13,10 @@
 
 ##Screenshots of the App##
 
-![alt text](https://db.tt/vgVUie7z "Landing Page" =245x475) ![alt text](https://db.tt/9whGAwj6 "Landing Page" =245x475)
-![alt text](https://db.tt/Ki2sIevU "Checkout Page" =245x475) ![alt text](https://db.tt/Pr0xvldR "Landing Page" =245x475)
+![alt text](https://db.tt/vgVUie7z =245x475 "Landing Page")
+![alt text](https://db.tt/9whGAwj6 =245x475 "Landing Page")
+![alt text](https://db.tt/Ki2sIevU  =245x475 "Checkout Page")
+![alt text](https://db.tt/Pr0xvldR  =245x475 "Landing Page")
 
 
 
