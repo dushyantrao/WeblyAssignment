@@ -1,7 +1,7 @@
 // problem: why does Ralph only bark once?
 // fix it to make Ralph bark twice!
 
-//answer: setTimeout takes a function as first parameter. the function wasn't being invoked.
+//answer: setTimeout takes a function as first parameter. I was directly calling it.
 
 var Dog = function( name ) {
   this.name = name
@@ -18,4 +18,6 @@ var ralph = new Dog('Ralph')
 ralph.bark()
 
 // in 1 second we want Ralph to bark again
-setTimeout( ralph.bark() , 1000 ) //method wasn't called.
+setTimeout( (function() {
+  ralph.bark();
+  }) , 1000 );
