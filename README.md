@@ -11,6 +11,15 @@
 * If the product is made available by using the stock.inStock property, then a whole load of features can be used. For instance, adding to cart pops up a checkout menu on the top. On clicking the checkout menu you can review your order etc. You could proceed to payment from there else continue shopping. There is a way to empty the cart as well.
 * Good enhancements would be to have quantity change in the checkout page. Also, ability to delete only a single item from the cart would be another enhancement. Also, a grid of the products present in the category would be good.
 
+##Screenshots of the App##
+
+![alt text](https://db.tt/vgVUie7z "Landing Page")
+![alt text](https://db.tt/9whGAwj6 "Landing Page")
+![alt text](https://db.tt/Ki2sIevU "Checkout Page")
+![alt text](https://db.tt/Pr0xvldR "Landing Page")
+
+
+
 ###Task3###
 
 * The testing has been done for a "Marisa Platinum ring" on m.kamajewellery.com. The placement of the order isn't taking place, after selecting COD as payment methods, even after setting a custom timeout of 30 seconds on the waitForSelector method of CasperJS.
